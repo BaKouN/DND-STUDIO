@@ -4,6 +4,7 @@ import { GeistMono } from 'geist/font/mono'
 import './globals.css'
 
 import NavBar from '@/components/navBar'
+import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'DnD Studio',
@@ -31,6 +32,7 @@ html {
         <div className="mx-auto">
           {children}  
         </div>
+        <Footer />
       </body>
     </html>
   )
