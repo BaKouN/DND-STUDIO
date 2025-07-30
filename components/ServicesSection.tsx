@@ -5,7 +5,7 @@ import { Wand2, Globe, Sparkles } from "lucide-react"
 
 export default function ServicesSection() {
   return (
-    <section id="grimoire" className="py-20 bg-zinc-800">
+    <section id="services" className="py-20 bg-zinc-800">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
