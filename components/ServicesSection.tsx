@@ -46,14 +46,14 @@ export default function ServicesSection() {
               className="bg-zinc-900 p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2, duration: 0.8 }}
+              transition={{ duration: 0.3 }}
               whileHover={{
                 scale: 1.05,
                 boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)",
               }}
               viewport={{ once: true }}
             >
-              <motion.div className="text-zinc-300 mb-4" whileHover={{ rotate: 360 }} transition={{ duration: 0.6 }}>
+              <motion.div className="text-zinc-300 mb-4">
                 {service.icon}
               </motion.div>
               <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
