@@ -36,14 +36,14 @@ function NavBar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <motion.div
-            className="text-2xl font-bold"
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 400 }}
-          >
-            <span className="bg-zinc-50 text-zinc-900 px-3 py-1 rounded-lg">D</span>
-          </motion.div>
-
+          <Link href="/" className="text-2xl font-bold">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 400 }}
+            >
+              <span className="bg-zinc-50 text-zinc-900 px-3 py-1 rounded-lg">D</span>
+            </motion.div>
+          </Link>
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
             <a
@@ -53,6 +53,19 @@ function NavBar() {
             >
               Grimoire
             </a>
+            <Link
+              href="/about"
+              className="text-zinc-300 hover:text-zinc-50 transition-colors"
+            >
+              <motion.span
+                whileHover={{ y: -2 }}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+              >
+                À propos
+              </motion.span>
+            </Link>
             <Link
               href="/contact"
               className="text-zinc-300 hover:text-zinc-50 transition-colors"
@@ -91,6 +104,13 @@ function NavBar() {
             >
               Grimoire
             </a>
+            <Link
+              href="/about"
+              className="block text-zinc-300 hover:text-zinc-50 transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              À propos
+            </Link>
             <Link
               href="/contact"
               className="block text-zinc-300 hover:text-zinc-50 transition-colors"
