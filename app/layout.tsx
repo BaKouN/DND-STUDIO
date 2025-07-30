@@ -26,9 +26,11 @@ html {
 }
         `}</style>
       </head>
-      <body>
+      <body className='px-4 sm:px-0 bg-zinc-900'>
         <NavBar />
-        {children}
+        <div className="mx-auto">
+          {children}  
+        </div>
       </body>
     </html>
   )

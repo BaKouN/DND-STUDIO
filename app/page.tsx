@@ -1,115 +1,22 @@
 "use client"
 
-import { useState, useEffect } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { ArrowDown, Sparkles, Wand2, Globe } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { socials } from "@/lib/constants"
+import Hero from "@/components/Hero"
 
 
 export default function DnDStudioLanding() {
-  const { scrollYProgress } = useScroll()
-
-  const heroY = useTransform(scrollYProgress, [0, 1], [0, -100])
-  const particlesY = useTransform(scrollYProgress, [0, 1], [0, -200])
 
   return (
     <div className="min-h-screen bg-zinc-900 text-zinc-50">
 
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Animated Background */}
-        <motion.div className="absolute inset-0 z-0" style={{ y: particlesY }}>
-          {[...Array(20)].map((_, i) => {
-            // Use deterministic positioning based on index
-            const left = (i * 37 + 23) % 100
-            const top = (i * 43 + 17) % 100
-            const duration = 3 + (i % 3)
-            const delay = (i * 0.3) % 2
-            
-            return (
-              <motion.div
-                key={i}
-                className="absolute w-2 h-2 bg-zinc-600 rounded-full"
-                style={{
-                  left: `${left}%`,
-                  top: `${top}%`,
-                }}
-                animate={{
-                  y: [0, -30, 0],
-                  opacity: [0.3, 1, 0.3],
-                }}
-                transition={{
-                  duration,
-                  repeat: Number.POSITIVE_INFINITY,
-                  delay,
-                }}
-              />
-            )
-          })}
-        </motion.div>
-
-        <motion.div className="relative z-10 text-center max-w-4xl mx-auto px-4" style={{ y: heroY }}>
-          <motion.h1
-            className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-          >
-            {["Créons", "des", "expériences", "légendaires"].map((word, index) => (
-              <motion.span
-                key={word}
-                className="inline-block mr-4"
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.2 + 0.5, duration: 0.8 }}
-              >
-                {word}
-              </motion.span>
-            ))}
-          </motion.h1>
-
-          <motion.p
-            className="text-xl md:text-2xl text-zinc-400 mb-8 max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.5, duration: 0.8 }}
-          >
-            Nous transformons le digital avec plus de physique et améliorons le physique grâce au digital
-          </motion.p>
-
-          <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 2, duration: 0.8 }}
-          >
-            <Button size="lg" className="bg-zinc-50 hover:bg-zinc-200 text-zinc-900 px-8 py-3 text-lg">
-              Commencer l'aventure
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-zinc-600 text-zinc-300 hover:bg-zinc-800 px-8 py-3 text-lg bg-transparent"
-            >
-              Découvrir nos quêtes
-            </Button>
-          </motion.div>
-        </motion.div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-        >
-          <ArrowDown className="text-zinc-500" size={24} />
-        </motion.div>
-      </section>
+      <Hero />
 
       {/* Services Section */}
       <section id="grimoire" className="py-20 bg-zinc-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 50 }}
