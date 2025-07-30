@@ -29,7 +29,7 @@ function NavBar() {
 
             {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8">
-              {["Grimoire", "Quêtes", "Guilde", "Contact"].map((item, index) => {
+              {["Grimoire", "Contact"].map((item, index) => {
                 const href = item === "Contact" ? "/contact" : `#${item.toLowerCase()}`
                 const Component = item === "Contact" ? Link : motion.a
                 
@@ -66,7 +66,7 @@ function NavBar() {
             </div>
 
             {/* Mobile Menu Button */}
-            <motion.button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)} whileTap={{ scale: 0.95 }}>
+            <motion.button className="md:hidden text-zinc-50 pr-6" onClick={() => setIsMenuOpen(!isMenuOpen)} whileTap={{ scale: 0.95 }}>
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </motion.button>
           </div>
@@ -81,7 +81,7 @@ function NavBar() {
             exit={{ opacity: 0, height: 0 }}
           >
             <div className="px-4 py-4 space-y-4">
-              {["Grimoire", "Quêtes", "Guilde", "Contact"].map((item) => {
+              {["Grimoire", "Contact"].map((item) => {
                 const href = item === "Contact" ? "/contact" : `#${item.toLowerCase()}`
                 const Component = item === "Contact" ? Link : "a"
                 

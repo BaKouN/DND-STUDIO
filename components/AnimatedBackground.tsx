@@ -6,7 +6,7 @@ function AnimatedBackground() {
       const particlesY = useTransform(scrollYProgress, [0, 1], [0, -200])
 
     return (
-        <motion.div className="absolute inset-0 z-0" style={{ y: particlesY }}>
+        <motion.div className="absolute inset-0 pointer-events-none" style={{ y: particlesY }}>
           {[...Array(50)].map((_, i) => {
             // Use deterministic positioning based on index
             const left = (i * 37 + 23) % 100
